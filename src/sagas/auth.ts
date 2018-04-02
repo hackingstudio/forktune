@@ -27,12 +27,12 @@ function* exchangeCode() {
     const { code, error, state } = action.payload.query;
 
     if (state !== OAUTH_STATE) {
-        return;
+        return false;
     }
 
     if (error === 'access_denied') {
         console.error('Spotify denied access 😔');
-        return;
+        return false;
     }
 
     yield put(replace('/', {}));
@@ -44,12 +44,22 @@ function* exchangeCode() {
     } = yield spotifyExchangeCode(code, window.location.origin);
 
     storeAuthData(accessToken, expiresIn, refreshToken);
+    return true;
 }
 
 const spotifyOAuthURL = `https://accounts.spotify.com/authorize?${spotifyOAuthQueryString}`;
 
 export default function* () {
     yield takeEvery(Types.LOGIN_SPOTIFY, function* () { window.location.href = spotifyOAuthURL });
-    yield call(exchangeCode);
+    const performedOAuth = yield call(exchangeCode);
+
+    if (performedOAuth) {
+        // TODO: 💩
+        // Use the registerChannel or similar to notify the router?
+
+        // Reload page to force loading of playlists
+        window.location.href = window.location.origin;
+    }
+
     yield put(authInitFinished());
 }
