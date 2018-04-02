@@ -73,15 +73,11 @@ export default function* () {
 
         const action = racer.locationChange;
 
-        console.log(action);
-
         forks.forEach((task) => task.cancel());
         forks = [];
 
         const view = action.payload.result.view;
-        console.log('started sagas for', view, ':', routes);
         if (routes.has(view)) {
-            console.log('wolololo');
             for (const saga of routes.get(view)!) {
                 forks.push(yield forkRetry(saga));
             }
