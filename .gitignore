@@ -11,3 +11,4 @@ firebase-debug.log
 
 spotify.config.js
 .firebaserc
+service-account.*
