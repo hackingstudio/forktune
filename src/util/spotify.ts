@@ -33,6 +33,10 @@ export function storeAuthData(accessToken: string, expiresIn: number, refreshTok
     } as SpotifyAuthStorage);
 }
 
+export function loadAuthData(): SpotifyAuthStorage {
+    return localStorage.getItem(LOCAL_STORAGE_KEY) ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!): null;
+}
+
 export class UserNotLoggedInError extends Error {
     constructor() {
         super('User not logged in');
