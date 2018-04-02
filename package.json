@@ -31,6 +31,7 @@
     "typescript-lit-html-plugin": "^0.2.0"
   },
   "scripts": {
+    "build": "NODE_ENV=production rollup -c",
     "serve": "rollup -c --watch",
     "serve-functions": "yarn --cwd functions build && firebase serve --only functions"
   }
