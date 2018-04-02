@@ -8,7 +8,7 @@ let credential;
 
 try {
     // TODO: 💩
-    const serviceAccount = require('./service-account').default;
+    const { serviceAccount } = require('./service-account');
     credential = admin.credential.cert(serviceAccount);
 } catch (e) {
     credential = admin.credential.applicationDefault();
