@@ -1,19 +1,19 @@
 import { https } from "firebase-functions";
+import * as admin from 'firebase-admin';
 import * as request from 'request-promise-native';
 import { Agent } from "https";
 import { crypto } from './util/crypto';
 import { config } from './util/config';
 import createCors from 'cors';
+import {URL} from "url";
 
 const cors = createCors({ origin: true });
 const agent = new Agent({ keepAlive: true });
 
 const { client_id, client_secret, encryption_key } = config().spotify;
+const authKey = new Buffer(`${ client_id }:${ client_secret }`).toString('base64');
 
-async function fetchToken(params) {
-
-    const authKey = new Buffer(`${ client_id }:${ client_secret }`).toString('base64');
-
+async function fetchSpotifyToken(params) {
     return request.post({
         agent,
         uri: 'https://accounts.spotify.com/api/token',
@@ -23,7 +23,15 @@ async function fetchToken(params) {
         },
         json: true,
     });
+}
 
+function isValidUrl(url: string): boolean {
+    try {
+        new URL(url);
+        return true;
+    } catch (err) {
+        return false;
+    }
 }
 
 export interface ExchangeCodeResult {
@@ -46,14 +54,45 @@ export const exchangeCode = https.onRequest( (req, resp) => cors(req, resp, asyn
     }
 
     try {
-        const { access_token, expires_in, refresh_token } = await fetchToken({
+        const { access_token, expires_in, refresh_token } = await fetchSpotifyToken({
             'grant_type': 'authorization_code',
             code,
             'redirect_uri': redirectUri,
         });
 
+        const user = await request.get({
+            agent,
+            uri: `https://api.spotify.com/v1/me`,
+            headers: {
+                'Authorization': `Bearer ${access_token}`
+            },
+            json: true,
+        });
+
+        const userData = {
+            email: user.email,
+            emailVerified: false,
+            displayName: user.display_name,
+            photoURL: (user.images && user.images.length > 0 && isValidUrl(user.images[0].url))
+                ? user.images[0].url
+                : undefined,
+            disabled: false,
+        };
+
+        try {
+            await admin.auth().updateUser(user.uri, userData);
+        } catch {
+            await admin.auth().createUser({
+                uid: user.uri,
+                ...userData,
+            });
+        }
+
+        const firebaseToken = await admin.auth().createCustomToken(user.uri);
+
         resp.send({
             accessToken: access_token,
+            firebaseToken: firebaseToken,
             expiresIn: expires_in,
             refreshToken: crypto.encrypt(refresh_token, encryption_key),
         });
@@ -88,7 +127,7 @@ export const refreshAccessToken = https.onRequest( (req, resp) => cors(req, resp
             token_type,
             scope,
             expires_in,
-        } = await fetchToken({
+        } = await fetchSpotifyToken({
             'grant_type': 'refresh_token',
             'refresh_token': refreshToken,
         });
