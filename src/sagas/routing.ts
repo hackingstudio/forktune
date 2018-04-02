@@ -1,10 +1,9 @@
 
-import {fork, put, race, select, take, takeEvery} from 'redux-saga/effects';
+import {race, select, take} from 'redux-saga/effects';
 import { LOCATION_CHANGED } from 'redux-little-router/es/types';
 import {Views} from "../routing";
 import {eventChannel, Task} from "redux-saga";
 import {forkRetry} from "./index";
-import {AuthInitFinishedAction} from "../actions/auth";
 import {Types} from "../actions";
 
 const EVENT_REGISTER = 'saga-routing-register';
