@@ -1,0 +1,13 @@
+build
+dist
+.rpt2_cache
+functions/lib
+
+node_modules
+functions/node_modules
+
+yarn-error.log
+firebase-debug.log
+
+spotify.config.js
+.firebaserc
