@@ -20,4 +20,4 @@ deploy:
     token: $FIREBASE_TOKEN
     project: "forktune-foo"
     on:
-      branch: develop
+      branch: devel
