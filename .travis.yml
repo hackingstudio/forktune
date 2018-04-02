@@ -1,0 +1,23 @@
+language: node_js
+node_js: "8"
+
+before_script:
+  - yarn global add greenkeeper-lockfile@1
+  - greenkeeper-lockfile-update
+
+script:
+  - yarn build
+  - yarn --cwd functions
+  - yarn --cwd functions lint
+  - yarn --cwd functions build
+
+after_script:
+  - greenkeeper-lockfile-upload
+
+deploy:
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_TOKEN
+    project: "forktune-foo"
+    on:
+      branch: develop
