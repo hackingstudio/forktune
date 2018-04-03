@@ -5,11 +5,13 @@ import saga from '../sagas/view-home';
 import {Views} from "../routing";
 import {register} from "../sagas/routing";
 import {State} from "../state";
+import {loadAuthData} from "../util/spotify";
 
 register(Views.Home, saga);
 
 interface ViewHomeProps {
     playlists: any[];
+    loggedIn: boolean;
 }
 
 interface ViewHomeDispatch {
@@ -17,7 +19,7 @@ interface ViewHomeDispatch {
 }
 
 const View = (props: ViewHomeProps & ViewHomeDispatch) => html`
-<button on-click="${ props.loginSpotify }">Login via Spotify</button>
+${!props.loggedIn ? html`<button on-click="${ props.loginSpotify }">Login via Spotify</button>` : ''}
 <ol>
 ${props.playlists.map((playlist) => html`
     <li>${playlist.name}</li>
@@ -27,6 +29,7 @@ ${props.playlists.map((playlist) => html`
 
 const mapStateToProps = (state: State): ViewHomeProps => ({
     playlists: Object.values(state.playlistsSpotify),
+    loggedIn: !!loadAuthData(),
 });
 
 const mapDispatchToProps: ViewHomeDispatch = {
