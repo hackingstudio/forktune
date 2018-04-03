@@ -1,3 +1,7 @@
+import '@polymer/paper-button/paper-button';
+import '@polymer/paper-item/paper-item';
+import '@polymer/iron-icons/iron-icons';
+
 import { connect } from 'fit-html';
 import { html } from 'lit-html/lib/lit-extended';
 import { loginSpotify } from "../actions/view-home";
@@ -20,32 +24,37 @@ interface ViewHomeDispatch {
 
 const View = (props: ViewHomeProps & ViewHomeDispatch) => html`
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 <style>
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    font-size: 2rem;
-    border-bottom: thin #909090 solid;
-    padding: 0.1rem 0.5rem;
+paper-button > img {
+    height: 2rem; 
 }
 </style>
 
+<style is="custom-style">
+paper-button.spotify {
+    background-color: #1db954;
+    color: white;
+}
+paper-item {
+    font-size: 1.5rem;
+}
+</style>
+
+<style is="custom-style" include="paper-item-shared-styles"></style>
+
 ${!props.loggedIn ? html`
 <div style="text-align: center">
-    <button style="font-size: 1.5rem;" type="button" class="btn btn-success" on-click="${ props.loginSpotify }">
-        Login via Spotify
-    </button>
+    <paper-button class="spotify" style="font-size: 1.25rem;" on-click="${ props.loginSpotify }">
+        Login via&nbsp;<img src="Spotify_Logo_RGB_White.png" />
+    </paper-button>
 </div>` : ''}
-<ul>
+
+<paper-listbox>
 ${props.playlists.map((playlist) => html`
-    <li>${playlist.name}</li>
+    <paper-item><iron-icon icon="icons:view-list"></iron-icon>&nbsp;${playlist.name}</paper-item>
 `)}
-</ul>
+</paper-listbox>
+<div style="height: 1rem;"></div>
 `;
 
 const mapStateToProps = (state: State): ViewHomeProps => ({

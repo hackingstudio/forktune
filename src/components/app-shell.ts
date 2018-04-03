@@ -1,3 +1,5 @@
+import '@polymer/iron-icons/iron-icons';
+
 import { connect, withStore } from 'fit-html';
 import { html, svg } from 'lit-html/lib/lit-extended';
 import store from '../store';
@@ -17,7 +19,7 @@ a, a:visited, a:hover, a:active {
 
 <div style="text-align: center;"><img src="logo_full.svg" /></div>
 <view-home></view-home>
-<footer><div style="text-align: center;"><a href="https://hacking.studio/">hacking ❤ studio</a></div></footer>
+<footer><div style="text-align: center;"><a href="https://hacking.studio/">hacking <iron-icon icon="icons:favorite"></iron-icon> studio</a></div></footer>
 `;
 
 const Shell = connect(
