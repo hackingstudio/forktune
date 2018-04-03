@@ -37,6 +37,7 @@ function isValidUrl(url: string): boolean {
 export interface ExchangeCodeResult {
     accessToken: string;
     expiresIn: number;
+    firebaseToken: string;
     refreshToken: string;
 }
 
@@ -92,10 +93,10 @@ export const exchangeCode = https.onRequest( (req, resp) => cors(req, resp, asyn
 
         resp.send({
             accessToken: access_token,
-            firebaseToken: firebaseToken,
             expiresIn: expires_in,
+            firebaseToken: firebaseToken,
             refreshToken: crypto.encrypt(refresh_token, encryption_key),
-        });
+        } as ExchangeCodeResult);
     } catch (e) {
         resp.status(500).send(e.message);
     }
