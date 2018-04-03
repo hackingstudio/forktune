@@ -45,6 +45,7 @@ const frontendConfig = {
     typescript(),
     copy({
       'src/index.html': 'dist/index.html',
+      'assets': 'dist',
     }),
     cjs({
       extensions: ['.js', '.ts'],

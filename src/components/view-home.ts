@@ -19,12 +19,33 @@ interface ViewHomeDispatch {
 }
 
 const View = (props: ViewHomeProps & ViewHomeDispatch) => html`
-${!props.loggedIn ? html`<button on-click="${ props.loginSpotify }">Login via Spotify</button>` : ''}
-<ol>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    font-size: 2rem;
+    border-bottom: thin #909090 solid;
+    padding: 0.1rem 0.5rem;
+}
+</style>
+
+${!props.loggedIn ? html`
+<div style="text-align: center">
+    <button style="font-size: 1.5rem;" type="button" class="btn btn-success" on-click="${ props.loginSpotify }">
+        Login via Spotify
+    </button>
+</div>` : ''}
+<ul>
 ${props.playlists.map((playlist) => html`
     <li>${playlist.name}</li>
 `)}
-</ol>
+</ul>
 `;
 
 const mapStateToProps = (state: State): ViewHomeProps => ({
