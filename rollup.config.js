@@ -60,7 +60,7 @@ const frontendConfig = {
       ui: false
     }) : null,
   ].filter((plugin) => plugin !== null),
-  //onwarn: err => console.error(err.toString()),
+  onwarn: err => console.error(err.toString()),
   watch: {
     include: 'src/**/*'
   },

@@ -25,10 +25,9 @@ export const SCOPES = [
     'user-library-read',
 ];
 
-export function storeAuthData(accessToken: string, firebaseToken: string, expiresIn: number, refreshToken: string) {
+export function storeAuthData(accessToken: string, expiresIn: number, refreshToken: string) {
     localStorage[LOCAL_STORAGE_KEY] = JSON.stringify({
         accessToken,
-        firebaseToken,
         expiresAt: Date.now() + (expiresIn * 1000),
         refreshToken,
     } as SpotifyAuthStorage);
@@ -46,7 +45,6 @@ export class UserNotLoggedInError extends Error {
 
 export interface SpotifyAuthStorage {
     accessToken: string;
-    firebaseToken: string;
     expiresAt: number;
     refreshToken: string;
 }
@@ -84,7 +82,7 @@ export async function requireAccessToken() {
         throw new UserNotLoggedInError();
     }
 
-    const { accessToken, firebaseToken, expiresAt, refreshToken }: SpotifyAuthStorage = JSON.parse(authString);
+    const { accessToken, expiresAt, refreshToken }: SpotifyAuthStorage = JSON.parse(authString);
 
     if (Date.now() <= expiresAt) {
         return accessToken;
@@ -97,7 +95,7 @@ export async function requireAccessToken() {
         throw new UserNotLoggedInError();
     }
 
-    storeAuthData(newAccessToken, firebaseToken, expiresIn, refreshToken);
+    storeAuthData(newAccessToken, expiresIn, refreshToken);
     return newAccessToken;
 }
 

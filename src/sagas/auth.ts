@@ -11,6 +11,7 @@ import {
 } from "../util/spotify";
 import {authInitFinished} from "../actions/auth";
 import {ExchangeCodeResult} from "../../functions/src";
+import firebase from "../util/firebase";
 
 const OAUTH_STATE = 'POPOPO';
 
@@ -45,7 +46,9 @@ function* exchangeCode() {
         refreshToken,
     }: ExchangeCodeResult = yield spotifyExchangeCode(code, window.location.origin);
 
-    storeAuthData(accessToken, firebaseToken, expiresIn, refreshToken);
+    yield firebase.auth!().signInWithCustomToken(firebaseToken);
+
+    storeAuthData(accessToken, expiresIn, refreshToken);
     return true;
 }
 

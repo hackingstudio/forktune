@@ -10,5 +10,6 @@ yarn-error.log
 firebase-debug.log
 
 spotify.config.js
+firebase.config.js
 .firebaserc
 service-account.*
