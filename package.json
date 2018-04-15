@@ -10,7 +10,7 @@
     "@polymer/paper-button": "^3.0.0-pre.12",
     "@polymer/paper-item": "^3.0.0-pre.12",
     "firebase": "^4.12.1",
-    "fit-html": "^0.5.4",
+    "fit-html": "^0.6.0",
     "qs": "^6.5.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-little-router": "^15.1.0",
