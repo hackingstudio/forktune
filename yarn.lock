@@ -357,9 +357,13 @@ acorn-dynamic-import@^3.0.0:
   dependencies:
     acorn "^5.0.0"
 
-acorn@^5.0.0, acorn@^5.5.0, acorn@^5.5.3:
+acorn@^5.0.0, acorn@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+
+acorn@^5.7.3:
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
 
 adm-zip@0.4.7:
   version "0.4.7"
@@ -1784,6 +1788,10 @@ estree-walker@^0.3.0:
 estree-walker@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.1.tgz#64fc375053abc6f57d73e9bd2f004644ad3c5854"
+
+estree-walker@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
 
 etag@^1.8.1, etag@~1.8.0, etag@~1.8.1:
   version "1.8.1"
@@ -3535,7 +3543,7 @@ ltgt@^2.1.2:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltgt/-/ltgt-2.2.1.tgz#f35ca91c493f7b73da0e07495304f17b31f87ee5"
 
-magic-string@^0.22.4:
+magic-string@^0.22.4, magic-string@^0.22.5:
   version "0.22.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.22.5.tgz#8e9cf5afddf44385c1da5bc2a6a0dbd10b03657e"
   dependencies:
@@ -4815,16 +4823,16 @@ rollup-plugin-node-builtins@^2.1.2:
     crypto-browserify "^3.11.0"
     process-es6 "^0.11.2"
 
-rollup-plugin-node-globals@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-node-globals/-/rollup-plugin-node-globals-1.2.0.tgz#1a7ff0eb988430cfd76a12fb35767374b49a6d31"
+rollup-plugin-node-globals@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-globals/-/rollup-plugin-node-globals-1.4.0.tgz#5e1f24a9bb97c0ef51249f625e16c7e61b7c020b"
   dependencies:
-    acorn "^5.5.0"
+    acorn "^5.7.3"
     buffer-es6 "^4.9.3"
-    estree-walker "^0.5.1"
-    magic-string "^0.22.4"
+    estree-walker "^0.5.2"
+    magic-string "^0.22.5"
     process-es6 "^0.11.6"
-    rollup-pluginutils "^2.0.1"
+    rollup-pluginutils "^2.3.1"
 
 rollup-plugin-node-resolve@^3.3.0:
   version "3.3.0"
@@ -4856,6 +4864,13 @@ rollup-pluginutils@^2.0.1:
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.0.1.tgz#7ec95b3573f6543a46a6461bd9a7c544525d0fc0"
   dependencies:
     estree-walker "^0.3.0"
+    micromatch "^2.3.11"
+
+rollup-pluginutils@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.3.1.tgz#760d185ccc237dedc12d7ae48c6bcd127b4892d0"
+  dependencies:
+    estree-walker "^0.5.2"
     micromatch "^2.3.11"
 
 rollup@^0.57.1:
