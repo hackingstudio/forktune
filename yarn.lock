@@ -214,40 +214,52 @@
   dependencies:
     "@polymer/polymer" "3.0.0-pre.12"
 
+"@polymer/iron-flex-layout@^3.0.0-pre.26":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.0.tgz#c477b82501cecf054284e5c46523ce2494e6a7dd"
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/iron-form-element-behavior@3.0.0-pre.12":
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/iron-form-element-behavior/-/iron-form-element-behavior-3.0.0-pre.12.tgz#5c729b89d032fe1035891cb1c469dbb82665dc52"
   dependencies:
     "@polymer/polymer" "3.0.0-pre.12"
 
-"@polymer/iron-icon@3.0.0-pre.12":
-  version "3.0.0-pre.12"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-icon/-/iron-icon-3.0.0-pre.12.tgz#5c6c8cef297ef02a25703c9de1dd7aef089c8ee7"
+"@polymer/iron-icon@^3.0.0-pre.26":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-icon/-/iron-icon-3.0.0.tgz#9128937a96ce6b5195395fd7972be514ee32fbf8"
   dependencies:
-    "@polymer/iron-flex-layout" "3.0.0-pre.12"
-    "@polymer/iron-meta" "3.0.0-pre.12"
-    "@polymer/polymer" "3.0.0-pre.12"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/iron-meta" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-icons@^3.0.0-pre.12":
-  version "3.0.0-pre.12"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-icons/-/iron-icons-3.0.0-pre.12.tgz#35316139f6a2c84dc207dbecce174bf122921c0f"
+"@polymer/iron-icons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-icons/-/iron-icons-3.0.0.tgz#33d0d6dd379d671b6818862aacac324918a3f4ee"
   dependencies:
-    "@polymer/iron-icon" "3.0.0-pre.12"
-    "@polymer/iron-iconset-svg" "3.0.0-pre.12"
-    "@polymer/polymer" "3.0.0-pre.12"
+    "@polymer/iron-icon" "^3.0.0-pre.26"
+    "@polymer/iron-iconset-svg" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-iconset-svg@3.0.0-pre.12":
-  version "3.0.0-pre.12"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-iconset-svg/-/iron-iconset-svg-3.0.0-pre.12.tgz#99677b304a8ba72d5b6d9ec19ba4e0b16ef47662"
+"@polymer/iron-iconset-svg@^3.0.0-pre.26":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-iconset-svg/-/iron-iconset-svg-3.0.0.tgz#8182fd00479861b4b06d4e91a9920de7ccea71af"
   dependencies:
-    "@polymer/iron-meta" "3.0.0-pre.12"
-    "@polymer/polymer" "3.0.0-pre.12"
+    "@polymer/iron-meta" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-meta@3.0.0-pre.12":
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/iron-meta/-/iron-meta-3.0.0-pre.12.tgz#b89c280f4d004e7d6c8263d848803837e69d9776"
   dependencies:
     "@polymer/polymer" "3.0.0-pre.12"
+
+"@polymer/iron-meta@^3.0.0-pre.26":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-meta/-/iron-meta-3.0.0.tgz#bb9836d2d74f4b318585edc64e3cf91c2563394b"
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-validatable-behavior@3.0.0-pre.12":
   version "3.0.0-pre.12"
@@ -305,6 +317,12 @@
     "@webcomponents/shadycss" "^1.0.0"
     "@webcomponents/webcomponentsjs" "^1.0.0"
 
+"@polymer/polymer@^3.0.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.5.tgz#eaa42e70df7de818b5e1839452c82a5f83e39929"
+  dependencies:
+    "@webcomponents/shadycss" "^1.2.0"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -322,6 +340,10 @@
 "@webcomponents/shadycss@^1.0.0":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.1.2.tgz#947e9306eb2e084a4a3a4fd738aced00721bce92"
+
+"@webcomponents/shadycss@^1.2.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.5.0.tgz#109e596027eed04bc5032414c9f094e1aeb9260e"
 
 "@webcomponents/webcomponentsjs@^1.0.0":
   version "1.1.1"
