@@ -187,11 +187,21 @@
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/font-roboto/-/font-roboto-3.0.0-pre.12.tgz#b19391245d1d36369f4c6136e0a328468f18f423"
 
+"@polymer/font-roboto@^3.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@polymer/font-roboto/-/font-roboto-3.0.2.tgz#80cdaa7225db2359130dfb2c6d9a3be1820020c3"
+
 "@polymer/iron-a11y-keys-behavior@3.0.0-pre.12":
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-3.0.0-pre.12.tgz#bb25b4b991c30514b2e156ed92952c7ce0e34c81"
   dependencies:
     "@polymer/polymer" "3.0.0-pre.12"
+
+"@polymer/iron-a11y-keys-behavior@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-3.0.1.tgz#2868ea72912d2007ffab4734684a91f5aac49b84"
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-behaviors@3.0.0-pre.12":
   version "3.0.0-pre.12"
@@ -199,6 +209,13 @@
   dependencies:
     "@polymer/iron-a11y-keys-behavior" "3.0.0-pre.12"
     "@polymer/polymer" "3.0.0-pre.12"
+
+"@polymer/iron-behaviors@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-behaviors/-/iron-behaviors-3.0.1.tgz#a3b6f876779a7f0a91a15e4423890968b6525901"
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-checked-element-behavior@3.0.0-pre.12":
   version "3.0.0-pre.12"
@@ -213,6 +230,12 @@
   resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.0-pre.12.tgz#209791d067521115e61a9fb2cb4070f0de82322b"
   dependencies:
     "@polymer/polymer" "3.0.0-pre.12"
+
+"@polymer/iron-flex-layout@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.1.tgz#36f9e1a8eb792d279b2bc75d362628721ad37f0c"
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-form-element-behavior@3.0.0-pre.12":
   version "3.0.0-pre.12"
@@ -274,14 +297,14 @@
     "@polymer/paper-styles" "3.0.0-pre.12"
     "@polymer/polymer" "3.0.0-pre.12"
 
-"@polymer/paper-item@^3.0.0-pre.12":
-  version "3.0.0-pre.12"
-  resolved "https://registry.yarnpkg.com/@polymer/paper-item/-/paper-item-3.0.0-pre.12.tgz#71524722bab67ec81b80d20ef8cd029cb8f7a3db"
+"@polymer/paper-item@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-item/-/paper-item-3.0.1.tgz#05b3543483e556cd5532431cd1751a84343989b5"
   dependencies:
-    "@polymer/iron-behaviors" "3.0.0-pre.12"
-    "@polymer/iron-flex-layout" "3.0.0-pre.12"
-    "@polymer/paper-styles" "3.0.0-pre.12"
-    "@polymer/polymer" "3.0.0-pre.12"
+    "@polymer/iron-behaviors" "^3.0.0-pre.26"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
 
 "@polymer/paper-ripple@3.0.0-pre.12":
   version "3.0.0-pre.12"
@@ -298,12 +321,26 @@
     "@polymer/iron-flex-layout" "3.0.0-pre.12"
     "@polymer/polymer" "3.0.0-pre.12"
 
+"@polymer/paper-styles@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-styles/-/paper-styles-3.0.1.tgz#bd4962b83ab8432cd1cf197bb5222d3a08f135e1"
+  dependencies:
+    "@polymer/font-roboto" "^3.0.1"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/polymer@3.0.0-pre.12":
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.12.tgz#3f5dd19099a194bf1066cf417ae13c335bd63b04"
   dependencies:
     "@webcomponents/shadycss" "^1.0.0"
     "@webcomponents/webcomponentsjs" "^1.0.0"
+
+"@polymer/polymer@^3.0.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.5.tgz#eaa42e70df7de818b5e1839452c82a5f83e39929"
+  dependencies:
+    "@webcomponents/shadycss" "^1.2.0"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -322,6 +359,10 @@
 "@webcomponents/shadycss@^1.0.0":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.1.2.tgz#947e9306eb2e084a4a3a4fd738aced00721bce92"
+
+"@webcomponents/shadycss@^1.2.0":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.5.2.tgz#ad72f43000c39ba4ac61e625131f34f4b7cfe55f"
 
 "@webcomponents/webcomponentsjs@^1.0.0":
   version "1.1.1"
