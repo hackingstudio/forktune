@@ -13,7 +13,7 @@
     "fit-html": "^0.5.4",
     "qs": "^6.5.1",
     "redux-devtools-extension": "^2.13.2",
-    "redux-little-router": "^15.1.0",
+    "redux-little-router": "^15.1.2",
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
