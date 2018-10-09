@@ -4552,9 +4552,9 @@ redux-little-router@^15.1.0:
     recompose "^0.26.0"
     url-pattern "^1.0.3"
 
-redux-saga@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.0.tgz#0a231db0a1489301dd980f6f2f88d8ced418f724"
+redux-saga@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
 
 redux@^3.7.2:
   version "3.7.2"
