@@ -21,7 +21,7 @@
     "connect-history-api-fallback": "^1.5.0",
     "firebase-tools": "^3.17.7",
     "rollup": "^0.57.1",
-    "rollup-plugin-browsersync": "^0.2.6",
+    "rollup-plugin-browsersync": "^1.1.0",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-json": "^2.3.0",
